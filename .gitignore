@@ -1,0 +1,9 @@
+.streamlit/secrets.toml
+.streamlit/gmail_token.json
+.streamlit/*token*
+.env
+.venv/
+venv/
+__pycache__/
+.DS_Storeapproved_artifacts/
+.DS_Store

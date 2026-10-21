@@ -1,0 +1,25 @@
+{
+  "date": "19 Oct 2026",
+  "top_themes": [
+    "General app experience / mixed feedback: 10,943 (84.2%)",
+    "Trading & order execution: 858 (6.6%)",
+    "Account, KYC & support: 560 (4.3%)",
+    "Fees & charge transparency: 362 (2.8%)",
+    "App stability & performance: 272 (2.1%)"
+  ],
+  "weekly_pulse": "# Weekly Product Pulse — Groww\n**Prepared:** 19 Oct 2026 | **Review window:** 27 Jul–18 Oct 2026 | **Analyzed:** 12,995 unique reviews.\n\n**Top themes (keyword-rule buckets):**\n- General/mixed feedback: 10,943 (84.2%).\n- Trading/order execution: 858 (6.6%).\n- Account, KYC & support: 560 (4.3%).\n- Fees/charge transparency: 362 (2.8%).\n- Stability/performance: 272 (2.1%).\n\n**Verbatim review excerpts (shortened only with ellipses where noted):**\n- Fees / charges, 18 Oct, 1★: “worest broker charges to High customer support nill”\n- Stability, 16 Oct, 1★: “It very bad app for stock . Because at last moment it technical issues. It doesn't use and coustomer services is not good. bad mutual funds. because my found is...”\n- Account / support, 18 Oct, 1★: “worst service, withdrawal amount is not created after 1month also”\n\n**Key observation:** Generic feedback is the largest bucket; specific comments point to trading/order execution, account/support access, and fee transparency. Fee-related comments express customer perceptions and do not by themselves establish an incorrect charge.\n\n**Suggested actions:** Clarify total transaction-cost components before/after trades; review order-execution and stability feedback by app version; make withdrawal status and support escalation easier to understand.\n\n*Method: uploaded export, review-ID deduplication, date validation, existing labels retained for matching IDs, keyword rules applied to newly added reviews. Rule-based labels are not human-verified semantic clustering.*\n",
+  "identified_fee_issue": "338 reviews mention fee/charge keywords; this is not proof of incorrect billing. Comments point to questions about total transaction costs and charge components.",
+  "explanation_bullets": [
+    "**Brokerage is only one line item.** A trade may also include applicable statutory and exchange-related charges; the exact set depends on the transaction and product.",
+    "**Check the current pricing page before trading.** Rates and applicable charges can change; use Groww’s official pricing page rather than assuming one flat fee applies to every trade.",
+    "**DP charges are distinct from brokerage.** Depository-related charges may apply to delivery sells; check the official help article for when they are levied.",
+    "**Review the contract note/transaction details.** Compare each listed charge and its calculation with the official pricing information.",
+    "**For a specific unexpected debit,** use the in-app support channel and share the order/contract-note details; do not infer the reason from the total debit alone.",
+    "**Last checked:** 19 Oct 2026. This is general information, not investment advice."
+  ],
+  "source_links": [
+    "https://groww.in/pricing",
+    "https://groww.in/help/payments-%26-withdrawals/payments-charges/why-is-my-brokerage-more-than-20-rupees--71",
+    "https://groww.in/help/stocks/searchable/when-are-dp-charges-levied"
+  ]
+}
