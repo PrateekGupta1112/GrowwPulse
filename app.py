@@ -150,6 +150,47 @@ def gmail_create_draft(subject, body, recipient):
     ).execute()
     return result.get("id", "")
 
+# Temporary Gmail connection entry point:
+# Open the app with ?gmail_connect=1 to authorize Gmail.
+if st.query_params.get("gmail_connect") == "1":
+    if not GMAIL_LIBRARIES_AVAILABLE:
+        st.error("Gmail libraries are missing. Check requirements.txt.")
+        st.stop()
+
+    flow = gmail_oauth_flow()
+    if flow is None:
+        st.error("Gmail OAuth settings are missing from Streamlit Secrets.")
+        st.stop()
+
+    import secrets
+
+    oauth_state = secrets.token_urlsafe(32)
+    code_verifier = secrets.token_urlsafe(64)
+    
+    flow.code_verifier = code_verifier
+    
+    auth_url, _ = flow.authorization_url(
+    access_type="offline",
+    prompt="consent select_account",
+    state=oauth_state,
+    code_challenge_method="S256",
+    )
+
+    GMAIL_STATE_PATH.parent.mkdir(parents=True, exist_ok=True)
+    GMAIL_STATE_PATH.write_text(
+        json.dumps({
+            "state": oauth_state,
+            "code_verifier": code_verifier,
+        }),
+        encoding="utf-8",
+    )
+
+    st.session_state["gmail_oauth_state"] = oauth_state
+    st.title("Connect Gmail")
+    st.write("Authorize your Google account to allow GrowwPulse to create email drafts.")
+    st.link_button("Continue to Google", auth_url)
+    st.stop()
+
 # Handle the OAuth redirect back from Google. Persist state/token locally because
 # some browser/Streamlit OAuth round-trips create a fresh session.
 if "error" in st.query_params:
